@@ -30,7 +30,7 @@ class UserAccountManager(BaseUserManager):
 class UserAccount(AbstractBaseUser):
     email = models.EmailField(max_length=120, unique=True)
     fullname = models.CharField(max_length=150)
-    phone = PhoneNumberField(unique=True)
+    phone = models.CharField(max_length=13,unique=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
