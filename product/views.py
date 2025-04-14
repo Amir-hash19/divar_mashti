@@ -11,3 +11,7 @@ class ProductListView(ListAPIView):
 
 
 
+class ProductCreateView(CreateAPIView):
+    serializer_class = ProductSerializer
+    queryset = Product.objects.all()
+    

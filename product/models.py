@@ -38,7 +38,7 @@ class Product(models.Model):
     situation = models.CharField(max_length=30, choices=PRODUCT_STATUS_CHOICES, default='pending')
     date_created = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    product_image = models.ImageField(upload_to='product_images/')
+    product_image = models.ImageField(upload_to='product_images/', null=True, blank=True)
     category = models.ForeignKey(to=Category, on_delete=models.CASCADE)
 
 

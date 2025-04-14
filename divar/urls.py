@@ -8,7 +8,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("user/", include("account.urls")),
-    path("products", include("product.urls")),
+    path("products/", include("product.urls")),
 ]
 
 
