@@ -24,3 +24,9 @@ class UserAccountSerializer(ModelSerializer):
             instance.set_password(password)
         instance.save()
         return instance        
+    
+
+class UserAccountSerializerD(ModelSerializer):
+    class Meta:
+        model = UserAccount
+        fields = "__all__"
