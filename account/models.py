@@ -6,12 +6,12 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class UserAccountManager(BaseUserManager):
     
-    def create_user(self, email, fullname, phone,password=None):
+    def create_user(self, email, fullname,password=None):
         if not email:
             raise ValueError("User must have an email")
         else:
             email = self.normalize_email(email)
-            user = self.model(email=email, fullname=fullname, phone=phone)
+            user = self.model(email=email, fullname=fullname)
             user.set_password(password)
             user.save()
             return user
@@ -30,7 +30,7 @@ class UserAccountManager(BaseUserManager):
 class UserAccount(AbstractBaseUser):
     email = models.EmailField(max_length=120, unique=True)
     fullname = models.CharField(max_length=150)
-    phone = models.CharField(max_length=13,unique=True)
+    phone = models.CharField(max_length=13, null=True, blank=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)

@@ -13,6 +13,7 @@ class Category(models.Model):
 
 
 
+
 class Product(models.Model):
 
     PUBLISH_STATUS_CHOICES = [
@@ -38,6 +39,7 @@ class Product(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     product_image = models.ImageField(upload_to='product_images/')
+    category = models.ForeignKey(to=Category, on_delete=models.CASCADE)
 
 
     def __str__(self):
