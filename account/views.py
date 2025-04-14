@@ -54,11 +54,11 @@ class CreateUserView(CreateAPIView):
 class DeleteUserView(DestroyAPIView):
     serializer_class = UserAccountSerializerD
     queryset = UserAccount.objects.all()
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminUser]
 
     def perform_destroy(self, instance):
         instance.delete()
-        return Response({"message":"The User was Deleted Successfully!"}, status=status.HTTP_204_NO_CONTENT)
+        return Response({"message":"The User was Deleted Successfully!"}, status=status.HTTP_200_OK)
         
 
 

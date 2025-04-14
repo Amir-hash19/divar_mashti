@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "d6d0d12c-c79a-4b10-a8eb-8e822e7fd1c4",
+		"name": "Divar_DRF_account",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42911537"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "verify-token",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "see user DRF",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/user-profile/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"user-profile",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin2@admin.com\",\n    \"fullname\": \"amirhosein2\",\n    \"phone\": \"09051066658\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/user-profile/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"user-profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-user-withcreateview",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"testali2@email.com\",\n    \"fullname\":\"testalizadeh\",\n    \"phone\":\"09966935794\",\n    \"password\":\"amir112233\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/creare-user2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"creare-user2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-user",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fullname\":\"nexttimedelte\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/update-user/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"update-user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "take-token",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/user/create-cuurent-user/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0NzAxMTU2LCJpYXQiOjE3NDQ2MTQ3NTYsImp0aSI6IjI0ZWQzOGQ3ZmEzMzRkZTk4ZTE4ODA4MTJhYzNhM2Q2IiwidXNlcl9pZCI6MX0.IgXbRzmnh2ERWxGbyTWo25ns7dRcr9OgvdM3KSsMmro",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"amirhosein.hydri1381@email.com\",\n    \"fullname\":\"amirhosein\",\n    \"phone\":\"09223296493\",\n    \"password\":\"amirhosein13\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/create-cuurent-user/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"create-cuurent-user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0NzA0MjM5LCJpYXQiOjE3NDQ2MTc4MzksImp0aSI6ImQ0MDVhODczZmJmZjRiMmE4ZjQyZmZkZTJkZjY0OGFiIiwidXNlcl9pZCI6MX0.RY5lrciZuJF-31CKQIWAVhawfyV2Wbu66I_pOWrCkag",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0NzA0MjM5LCJpYXQiOjE3NDQ2MTc4MzksImp0aSI6ImQ0MDVhODczZmJmZjRiMmE4ZjQyZmZkZTJkZjY0OGFiIiwidXNlcl9pZCI6MX0.RY5lrciZuJF-31CKQIWAVhawfyV2Wbu66I_pOWrCkag\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/verify",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-user-isAthenticated",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0NzA1MTc1LCJpYXQiOjE3NDQ2MTg3NzUsImp0aSI6IjNlMWY5OWZiYTM0OTQ5MTY5MzEyNjExOTIxOGJlYzMzIiwidXNlcl9pZCI6MX0.EhUz_Pj_9B8LLwvPCG1mZ3mrPtCv_kd2mV0WaaKki8k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/delete-user/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"delete-user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-delete-ISAdmin",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
