@@ -1,4 +1,4 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework.serializers import ModelSerializer, StringRelatedField
 from .models import Product, Order
 from rest_framework import serializers
 
@@ -22,3 +22,19 @@ class ProductDeleteSerializer(ModelSerializer):
         if not attrs.get('confirm_delete'):
             raise serializers.ValidationError("For finishing this action we need your access!")
         return attrs    
+
+
+
+class OrderSerializer(ModelSerializer):
+    customer = StringRelatedField
+    class Meta:
+        model = Order
+        fields = "__all__"
+        read_only_fields = ['customer']
+
+
+
+class OrderSerializerDetails(ModelSerializer):
+    class Meta:
+        model = Order
+        fields = "__all__"
