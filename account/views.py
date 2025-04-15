@@ -1,5 +1,5 @@
 from .models import UserAccount
-from rest_framework.generics import ListAPIView, ListCreateAPIView, CreateAPIView, UpdateAPIView,DestroyAPIView
+from rest_framework.generics import ListAPIView, ListCreateAPIView, CreateAPIView, UpdateAPIView,DestroyAPIView, RetrieveDestroyAPIView
 from .serializers import UserAccountSerializer, UserAccountSerializerD
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -66,6 +66,9 @@ class DeleteUserView(DestroyAPIView):
 class UpdateUserView(UpdateAPIView):
     serializer_class = UserAccountSerializer
     queryset = UserAccount.objects.all()
+
+
+
 
 
 

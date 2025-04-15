@@ -1,14 +1,26 @@
 from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView, DestroyAPIView
 from product.models import Product, Category, Order, OrderItem
 from .serializers import ProductSerializer, ProductDeleteSerializer
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import AllowAny
+from django_filters.rest_framework import DjangoFilterBackend
 
+
+
+class ProductPagination(PageNumberPagination):
+    page_size = 20
+    page_size_query_param = "page_size"
+    max_page_size = "50"
 
 
 class ProductListView(ListAPIView):
     serializer_class = ProductSerializer
     queryset = Product.objects.all()
+    pagination_class = ProductPagination
     permission_classes = [AllowAny]
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ["brand", "category", "price"]
+    
 
 
 
