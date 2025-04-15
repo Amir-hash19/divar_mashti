@@ -168,6 +168,168 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "delete-order-view",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0NzI4MzAwLCJpYXQiOjE3NDQ2NDE5MDAsImp0aSI6ImZlNWViN2E1YjhkMjQxMmU5OTkxNjk5MTg0YTU2YTgwIiwidXNlcl9pZCI6Mn0.WF-W-qgGGD-QkDIXB6taBZfDFjGjgAg52PhGd5k2QUk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0ODExODI2LCJpYXQiOjE3NDQ3MjU0MjYsImp0aSI6Ijc5YTliNzBhZTU2ZDRkYWU4ZmE2N2FjOGVhMDNhMmE5IiwidXNlcl9pZCI6Mn0.w67x4sEH1YPaG1ORDTuea6LYEMoqGEcWn525iJygiGU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/products/delete-order/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						"delete-order",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0NzI4MzAwLCJpYXQiOjE3NDQ2NDE5MDAsImp0aSI6ImZlNWViN2E1YjhkMjQxMmU5OTkxNjk5MTg0YTU2YTgwIiwidXNlcl9pZCI6Mn0.WF-W-qgGGD-QkDIXB6taBZfDFjGjgAg52PhGd5k2QUk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0ODEzMzI2LCJpYXQiOjE3NDQ3MjY5MjYsImp0aSI6IjcxNDM3NWM1MGE3ZTQ5ZTdhMGI0YTMxMTNiODUzNjFmIiwidXNlcl9pZCI6Mn0.YoymVlRQmvY_LH05loG43UvmCfKq4GJsbomqppSYVXk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\":\"delivered\",\n    \"shipping_address\":\"iran,tehran\",\n    \"total_price\":1000000,\n    \"payment_status\":\"True\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/products/create-order/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						"create-order",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order-details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/product/order-details/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"product",
+						"order-details",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0ODI1MDIwLCJpYXQiOjE3NDQ3Mzg2MjAsImp0aSI6IjEwZjk2MTA0ZjRjYjQwZDNiMzgzNWU5NGMxODQ3NWFiIiwidXNlcl9pZCI6Mn0.pr8SZ0r7tYSv9NWj7sYrjQbiBJkfK673ZudthCdnYTk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0ODI1MDIwLCJpYXQiOjE3NDQ3Mzg2MjAsImp0aSI6IjEwZjk2MTA0ZjRjYjQwZDNiMzgzNWU5NGMxODQ3NWFiIiwidXNlcl9pZCI6Mn0.pr8SZ0r7tYSv9NWj7sYrjQbiBJkfK673ZudthCdnYTk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"brand\":\"Dell\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/product/update-product/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"product",
+						"update-product",
+						"3"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

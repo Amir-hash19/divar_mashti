@@ -1,4 +1,4 @@
-from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView, DestroyAPIView, ListCreateAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView, DestroyAPIView, ListCreateAPIView, UpdateAPIView
 from product.models import Product, Category, Order, OrderItem
 from .serializers import ProductSerializer, ProductDeleteSerializer, OrderSerializer, OrderSerializerDetails
 from rest_framework.pagination import PageNumberPagination
@@ -67,3 +67,11 @@ class OrderRetrieveView(RetrieveAPIView):
     serializer_class = OrderSerializerDetails
     queryset = Order.objects.all()
     permission_classes = [AllowAny]
+
+
+
+
+
+class UpdateProductView(UpdateAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
